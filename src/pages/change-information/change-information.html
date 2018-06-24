@@ -1,0 +1,48 @@
+<!--
+  Generated template for the ChangeInformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>修改资料</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>手机号</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>学院</ion-label>
+      <ion-select name="college" [(ngModel)]="changeinformation.college">
+        <ion-option value="shuji">数计</ion-option>
+        <ion-option value="jingguan">经管</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>专业</ion-label>
+      <ion-select name="major" [(ngModel)]="changeinformation.major">
+        <ion-option value="jisuanjijishu">计算机技术</ion-option>
+        <ion-option value="ruanjiangongcheng">软件工程</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>入学年份</ion-label>
+      <ion-select name="year" [(ngModel)]="changeinformation.year">
+        <ion-option value="2017">2017</ion-option>
+        <ion-option value="2018">2018</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <button type="submit" ion-button block color="light-blue">保存</button>
+</ion-content>

@@ -1,0 +1,35 @@
+<!--
+  Generated template for the TeacherApplyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Teacher-Apply</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label style="font-size: large">申请</ion-label>
+    </ion-item>
+    <label for="group1"><input type="radio" id="group1" class="group"  name="group" value="1" ng-model="choice" >
+      <span style="font-size: medium">长期调换教室</span>
+    </label><br>
+    <label for="group2"><input type="radio" id="group2" class="group" name="group" value="2" ng-model="choice" >
+      <span style="font-size: medium">临时调课</span>
+    </label><br>
+    <label for="group3"><input type="radio" id="group3" class="group" name="group" value="3" ng-model="choice" >
+      <span style="font-size: medium">其他</span>
+      <ion-input placeholder="请输入其他申请" style="height: 90px;width: auto;font-size: medium"></ion-input>
+    </label>
+  </ion-list>
+  <div class="row">
+    <button type="submit" ion-button block color="primary">提交</button>
+  </div>
+</ion-content>

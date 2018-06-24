@@ -1,0 +1,206 @@
+<!--
+  Generated template for the TeacherCheckInPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>上课/下课</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="row">
+    <div class="col" style="text-align: center">讲台</div>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(1) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(1) == '1'" (click) = showStudentInformation(1)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(2) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(2) == '1'" (click) = showStudentInformation(2)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(3) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(3) == '1'" (click) = showStudentInformation(3)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(4) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(4) == '1'" (click) = showStudentInformation(4)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(5) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(5) == '1'" (click) = showStudentInformation(5)></button>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(6) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(6) == '1'" (click) = showStudentInformation(6)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(7) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(7) == '1'" (click) = showStudentInformation(7)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(8) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(8) == '1'" (click) = showStudentInformation(8)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(9) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(9) == '1'" (click) = showStudentInformation(9)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(10) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(10) == '1'" (click) = showStudentInformation(10)></button>
+    </ion-row>
+
+    <ion-row style="background: white; height: 30px"></ion-row>
+
+    <ion-row>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(11) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(11) == '1'" (click) = showStudentInformation(11)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(12) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(12) == '1'" (click) = showStudentInformation(12)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(13) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(13) == '1'" (click) = showStudentInformation(13)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(14) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(14) == '1'" (click) = showStudentInformation(14)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(15) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(15) == '1'" (click) = showStudentInformation(15)></button>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(16) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(16) == '1'" (click) = showStudentInformation(16)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(17) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(17) == '1'" (click) = showStudentInformation(17)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(18) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(18) == '1'" (click) = showStudentInformation(18)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(19) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(19) == '1'" (click) = showStudentInformation(19)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(20) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(20) == '1'" (click) = showStudentInformation(20)></button>
+    </ion-row>
+
+    <ion-row style="background: white; height: 30px"></ion-row>
+
+    <ion-row>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(21) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(21) == '1'" (click) = showStudentInformation(21)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(22) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(22) == '1'" (click) = showStudentInformation(22)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(23) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(23) == '1'" (click) = showStudentInformation(23)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(24) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(24) == '1'" (click) = showStudentInformation(24)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(25) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(25) == '1'" (click) = showStudentInformation(25)></button>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(26) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(26) == '1'" (click) = showStudentInformation(26)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(27) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(27) == '1'" (click) = showStudentInformation(27)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(28) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(28) == '1'" (click) = showStudentInformation(28)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(29) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(29) == '1'" (click) = showStudentInformation(29)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(30) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(30) == '1'" (click) = showStudentInformation(30)></button>
+    </ion-row>
+
+    <ion-row style="background: white; height: 30px"></ion-row>
+
+    <ion-row>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(31) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(31) == '1'" (click) = showStudentInformation(31)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(32) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(32) == '1'" (click) = showStudentInformation(32)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(33) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(33) == '1'" (click) = showStudentInformation(33)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(34) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(34) == '1'" (click) = showStudentInformation(34)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(35) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(35) == '1'" (click) = showStudentInformation(35)></button>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(36) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(36) == '1'" (click) = showStudentInformation(36)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(37) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(37) == '1'" (click) = showStudentInformation(37)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(38) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(38) == '1'" (click) = showStudentInformation(38)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(39) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(39) == '1'" (click) = showStudentInformation(39)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(40) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(40) == '1'" (click) = showStudentInformation(40)></button>
+    </ion-row>
+
+    <ion-row style="background: white; height: 30px"></ion-row>
+
+    <ion-row>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(41) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(41) == '1'" (click) = showStudentInformation(41)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(42) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(42) == '1'" (click) = showStudentInformation(42)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(43) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(43) == '1'" (click) = showStudentInformation(43)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(44) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(44) == '1'" (click) = showStudentInformation(44)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(45) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(45) == '1'" (click) = showStudentInformation(45)></button>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(46) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(46) == '1'" (click) = showStudentInformation(46)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(47) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(47) == '1'" (click) = showStudentInformation(47)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(48) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(48) == '1'" (click) = showStudentInformation(48)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(49) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(49) == '1'" (click) = showStudentInformation(49)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(50) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(50) == '1'" (click) = showStudentInformation(50)></button>
+    </ion-row>
+
+    <ion-row style="background: white; height: 30px"></ion-row>
+
+    <ion-row>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(51) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(51) == '1'" (click) = showStudentInformation(51)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(52) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(52) == '1'" (click) = showStudentInformation(52)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(53) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(53) == '1'" (click) = showStudentInformation(53)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(54) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(54) == '1'" (click) = showStudentInformation(54)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(55) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(55) == '1'" (click) = showStudentInformation(55)></button>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(56) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(56) == '1'" (click) = showStudentInformation(56)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(57) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(57) == '1'" (click) = showStudentInformation(57)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(58) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(58) == '1'" (click) = showStudentInformation(58)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(59) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(59) == '1'" (click) = showStudentInformation(59)></button>
+      <button style="background: grey; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(60) == '0'" (click) = studentNotExist()></button>
+      <button style="background: red; height: 30px; width: 8%; margin: 1px" *ngIf="getStudentExistence(60) == '1'" (click) = showStudentInformation(60)></button>
+    </ion-row>
+
+    <ion-row style="background: white; height: 30px"></ion-row>
+
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <button ion-button block color="light-blue" round (click)="attend()">上课</button>
+    </ion-row>
+    <ion-row>
+      <button ion-button block color="light-blue" round (click)="finishClass()">下课</button>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label floating>查看信息</ion-label>
+        <ion-select onchange="window.location=this.value" [(ngModel)]="typeText" (ngModelChange)="switchType()"
+                  interface="popover" style="height:45px;">
+          <ion-option value="studentlist">学生名单</ion-option>
+          <ion-option value="record">旷课及请假学生名单</ion-option>
+          <ion-option value="historyrecord">考勤历史记录</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

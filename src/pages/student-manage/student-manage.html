@@ -1,0 +1,52 @@
+<!--
+  Generated template for the StudentManagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Student-manage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item style="height: 40px;font-size: large">
+      <ion-label>申请管理</ion-label>
+    </ion-item>
+    <ion-item style="height: 30px">
+      <button ion-button clear style="height: 20px;font-size: medium" (click)="toStudentLeaveApplyPage()">请假申请</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item style="height: 40px;font-size: large">
+      <ion-label>消息管理</ion-label>
+    </ion-item>
+    <ion-item style="height: 30px">
+      <button ion-button clear style="height: 20px;font-size: medium" (click)="toStudentLeavePage()">请假</button>
+    </ion-item>
+    <ion-item style="height: 30px">
+      <button ion-button clear style="height: 20px;font-size: medium" (click)="toStudentRespondPage()">管理员反馈</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item style="height: 40px;font-size: large">
+      <ion-label>个人中心</ion-label>
+    </ion-item>
+    <ion-item style="height: 30px">
+      <button ion-button clear style="height: 20px;font-size: medium" (click)="toChangeInformationPage()">修改资料</button>
+    </ion-item>
+    <ion-item style="height: 30px">
+      <button ion-button clear style="height: 20px;font-size: medium" (click)="toChangePasswordPage()">修改密码</button>
+    </ion-item>
+    <ion-item style="height: 30px">
+      <button ion-button clear style="height: 20px;font-size: medium" (click)="exit()">退出登录</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,116 @@
+<!--
+  Generated template for the TeacherHomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{student_name}}的本周课程</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-grid>
+    <ion-row style="background: lightsteelblue">
+        <button style="margin-left: 5px" ion-button color="light-blue" (click)="toTeacherManagePage()">管理</button>
+        <ion-label style="text-align: center">{{course_towho}}</ion-label>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngFor="let course of allCourses">
+    <ion-row>
+      <!-- 课程数据 -->
+      <ion-col style="width: 9%">
+        <ion-row style="height: 40px"></ion-row>
+        <ion-row style="height: 40px">1</ion-row>
+        <ion-row style="height: 40px">2</ion-row>
+        <ion-row style="height: 40px">3</ion-row>
+        <ion-row style="height: 40px">4</ion-row>
+        <ion-row style="height: 40px">5</ion-row>
+        <ion-row style="height: 40px">6</ion-row>
+        <ion-row style="height: 40px">7</ion-row>
+        <ion-row style="height: 40px">8</ion-row>
+        <ion-row style="height: 40px">9</ion-row>
+        <ion-row style="height: 40px">10</ion-row>
+        <ion-row style="height: 40px">11</ion-row>
+        <ion-row style="height: 40px">12</ion-row>
+      </ion-col>
+
+
+      <ion-col style="width: 13%">
+        <ion-row style="height: 40px; text-align: center">周一</ion-row>
+        <ion-row style="height: 80px"><button style="word-break: normal" *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+      </ion-col>
+
+      <ion-col style="width: 13%">
+        <ion-row style="height: 40px; text-align: center">周二</ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+      </ion-col>
+
+      <ion-col style="width: 13%">
+        <ion-row style="height: 40px; text-align: center">周三</ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+      </ion-col>
+
+      <ion-col style="width: 13%">
+        <ion-row style="height: 40px; text-align: center">周四</ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+      </ion-col>
+
+      <ion-col style="width: 13%">
+        <ion-row style="height: 40px; text-align: center">周五</ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+      </ion-col>
+
+      <ion-col style="width: 13%">
+        <ion-row style="height: 40px; text-align: center">周六</ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+      </ion-col>
+
+      <ion-col style="width: 13%">
+        <ion-row style="height: 40px; text-align: center">周天</ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+        <ion-row style="height: 80px"><button *ngIf="course[1] == '星期五' && course[2] == '3-4节'" ion-button color="light-blue" (click)="attendance(course[3])">{{course[0]}}</button></ion-row>
+     </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

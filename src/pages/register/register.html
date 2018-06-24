@@ -1,0 +1,148 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid margin-top>
+    <ion-row>
+      <ion-col>
+        <img src="assets/images/register_one_grey.png" alt="" *ngIf="registerSlides.getActiveIndex()!=0">
+        <img src="assets/images/register_one.png" alt="" *ngIf="registerSlides.getActiveIndex()==0">
+      </ion-col>
+
+      <ion-col align-self-center>
+        <hr class="line">
+      </ion-col>
+
+      <ion-col>0
+        <img src="assets/images/register_two_grey.png" alt="" *ngIf="registerSlides.getActiveIndex()!=1">
+        <img src="assets/images/register_two.png" alt="" *ngIf="registerSlides.getActiveIndex()==1">
+      </ion-col>
+
+      <ion-col align-self-center>
+        <hr class="line">
+      </ion-col>
+
+      <ion-col>
+        <img src="assets/images/register_three_grey.png" alt="" *ngIf="registerSlides.getActiveIndex()!=2">
+        <img src="assets/images/register_three.png" alt="" *ngIf="registerSlides.getActiveIndex()==2">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div margin-top padding-top>
+    <ion-slides #registerSlides>
+      <!-- 第一步 输入教育信息 -->
+      <ion-slide>
+        <form #personalInformationForm="ngForm">
+          <ion-item>
+            <ion-label>学校</ion-label>
+            <ion-select name="school" [(ngModel)]="register.school">
+              <ion-option value="fuda">福大</ion-option>
+              <ion-option value="fushida">福师大</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>学院</ion-label>
+            <ion-select name="college" [(ngModel)]="register.college">
+              <ion-option value="shuji">数计</ion-option>
+              <ion-option value="jingguan">经管</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>专业</ion-label>
+            <ion-select name="major" [(ngModel)]="register.major">
+              <ion-option value="jisuanjijishu">计算机技术</ion-option>
+              <ion-option value="ruanjiangongcheng">软件工程</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>入学年份</ion-label>
+            <ion-select name="year" [(ngModel)]="register.year">
+              <ion-option value="2017">2017</ion-option>
+              <ion-option value="2018">2018</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-input name="stnumber" placeholder="请输入您的学号/工号" required [(ngModel)]="register.stnumber" #stnumber="ngModel"></ion-input>
+          </ion-item>
+
+          <button type="submit" ion-button block parmary [disabled]="personalInformationForm.invalid" (click)="next()">下一步</button>
+        </form>
+      </ion-slide>
+
+      <!-- 第二步 输入手机号密码 -->
+      <ion-slide>
+        <form #phoneForm="ngForm">
+          <ion-item>
+            <ion-input name="phone" type="number" placeholder="请输入您的手机号码"
+                       required pattern="^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,3,5-9]))\\d{8}$"
+                       [(ngModel)]="register.phone" #phone="ngModel">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="password" type="password" placeholder="请输入登录密码" required [(ngModel)]="register.password" #password="ngModel">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="confirmPassword" type="password" placeholder="请输入确认密码" required [(ngModel)]="register.confirmPassword" #confirmPassword="ngModel">
+            </ion-input>
+          </ion-item>
+          <ion-item *ngIf="phone.invalid && phone.touched">
+            <p [hidden]="!phone.errors?.required">请输入手机号码</p>
+            <p [hidden]="!phone.errors?.pattern">您输入的手机号格式不正确</p>
+          </ion-item>
+          <ion-item *ngIf="password.invalid && password.touched">
+            <p [hidden]="!password.errors?.required">请输入登录密码</p>
+          </ion-item>
+          <ion-item *ngIf="confirmPassword.invalid && confirmPassword.touched">
+            <p [hidden]="!confirmPassword.errors?.required">请输入确认密码</p>
+          </ion-item>
+          <button type="submit" ion-button block parmary [disabled]="phoneForm.invalid" (click)="next()" >下一步</button>
+          <button type="submit" ion-button block parmary (click)="previous()" >上一步</button>
+        </form>
+      </ion-slide>
+
+      <!-- 第三步 确认教育信息 -->
+      <ion-slide>
+        <ion-item>
+          <ion-label>确认教育信息</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>学校：{{register.school}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>学院：{{register.college}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>专业：{{register.major}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>入学年份：{{register.year}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>学号/工号：{{register.stnumber}}</ion-label>
+        </ion-item>
+
+          <button type="submit" ion-button block parmary (click)="correct()" >提交</button>
+          <button type="submit" ion-button block parmary (click)="previous()" >上一步</button>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+</ion-content>
