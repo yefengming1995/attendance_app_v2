@@ -65,18 +65,26 @@ export class StudentAttendancePage {
   }
 
   confirmSeatToSignIn() {
-    if (this.seatNumber == '') {
-      this.alertMess.alertMessages("请选择您的座位！");
+    if(this.signInTime != null) {
+      this.alertMess.alertMessages('请不要重复签到！');
     } else {
-      var row = (parseInt(this.seatNumber) - parseInt(this.seatNumber)%10)/10 + 1;
-      var col = parseInt(this.seatNumber)%10;
+      if (this.seatNumber == '') {
+        this.alertMess.alertMessages("请选择您的座位！");
+      } else {
+        var row = (parseInt(this.seatNumber) - parseInt(this.seatNumber) % 10) / 10 + 1;
+        var col = parseInt(this.seatNumber) % 10;
 
-      let alert = this.alertCtrl.create({
-        title: '信息',
-        message: '您的座位是： 第' + row + '行，第' + col + '列',
-        buttons: [{text:'确认', handler:()=>{ this.signIn(); }}, {text:'取消'}]
-      });
-      alert.present();
+        let alert = this.alertCtrl.create({
+          title: '信息',
+          message: '您的座位是： 第' + row + '行，第' + col + '列',
+          buttons: [{
+            text: '确认', handler: () => {
+              this.signIn();
+            }
+          }, {text: '取消'}]
+        });
+        alert.present();
+      }
     }
   }
 
@@ -97,36 +105,40 @@ export class StudentAttendancePage {
         let getLocationURL = 'http://119.29.225.79:8080/login/StudentGetPlace';
         this.http.post(getLocationURL, getLocationRequest).map(res => res.json()).subscribe(data => {
           //接收数据（place_id对应的经纬度）
-          console.log('teacher location: ' + data);
-          teach_lng = data.data[0].place_longitude;
-          teach_lat = data.data[0].place_latitude;
-
-          var map = new BMap.Map("allmap");
-          var pointStudent = new BMap.Point(lng,lat);  // 创建学生的点坐标
-          var pointTeacher = new BMap.Point(teach_lng,teach_lat);  // 创建教师的点坐标，数据从服务器端获取
-          var distance = map.getDistance(pointTeacher,pointStudent).toFixed(2);
-          console.log('您与老师之间的距离是：' + distance + ' 米。');  //获取两点距离,保留小数点后两位
-
-          if(parseFloat(distance) < 50) {
-            console.log('Seat number: ' + this.seatNumber);
-
-            //签到成功，回复数据（place_id + 账号）
-            let signInSuccessRequest = new URLSearchParams();
-            signInSuccessRequest.append('place_id', this.place_id);
-            signInSuccessRequest.append('sign_stuId', this.current_user);
-            signInSuccessRequest.append('sign_stuName', this.current_username);
-            signInSuccessRequest.append('sign_stuSeat', this.seatNumber);
-            signInSuccessRequest.append('sign_courseId', this.course_id);
-            signInSuccessRequest.append('sign_courseName', this.course_name);
-            let signInSuccessURL = 'http://119.29.225.79:8080/login/SignInPlace';
-            this.http.post(signInSuccessURL, signInSuccessRequest).map(res => res.json()).subscribe();
-            var time = new Date();
-            this.signInTime = time.getTime();
-            this.alertMess.alertMessages('签到成功！')
-            console.log(time);
-            console.log(this.signInTime);
+          console.log('teacher location: ' + data.data);
+          if(data.data == '') {
+            this.alertMess.alertMessages('老师上课后才能进行签到！')
           } else {
-            this.alertMess.alertMessages('方圆五百里内似乎没有您的身影...请重新签到！')
+            teach_lng = data.data[0].place_longitude;
+            teach_lat = data.data[0].place_latitude;
+
+            var map = new BMap.Map("allmap");
+            var pointStudent = new BMap.Point(lng, lat);  // 创建学生的点坐标
+            var pointTeacher = new BMap.Point(teach_lng, teach_lat);  // 创建教师的点坐标，数据从服务器端获取
+            var distance = map.getDistance(pointTeacher, pointStudent).toFixed(2);
+            console.log('您与老师之间的距离是：' + distance + ' 米。');  //获取两点距离,保留小数点后两位
+
+            if (parseFloat(distance) < 50) {
+              console.log('Seat number: ' + this.seatNumber);
+
+              //签到成功，回复数据（place_id + 账号）
+              let signInSuccessRequest = new URLSearchParams();
+              signInSuccessRequest.append('place_id', this.place_id);
+              signInSuccessRequest.append('sign_stuId', this.current_user);
+              signInSuccessRequest.append('sign_stuName', this.current_username);
+              signInSuccessRequest.append('sign_stuSeat', this.seatNumber);
+              signInSuccessRequest.append('sign_courseId', this.course_id);
+              signInSuccessRequest.append('sign_courseName', this.course_name);
+              let signInSuccessURL = 'http://119.29.225.79:8080/login/SignInPlace';
+              this.http.post(signInSuccessURL, signInSuccessRequest).map(res => res.json()).subscribe();
+              var time = new Date();
+              this.signInTime = time.getTime();
+              this.alertMess.alertMessages('签到成功！');
+              console.log(time);
+              console.log(this.signInTime);
+            } else {
+              this.alertMess.alertMessages('方圆五百里内似乎没有您的身影...请重新签到！')
+            }
           }
         });
     },{enableHighAccuracy: true})

@@ -23,7 +23,10 @@ import {TeacherRespondPage} from "../teacher-respond/teacher-respond";
 })
 export class TeacherManagePage {
 
+  current_user = '';
+
   constructor(public navCtrl: NavController, public navParams: NavParams,private storage:LocalStorageProvider,private alterCtrl:AlertController) {
+    this.current_user = this.navParams.get('current_user');
   }
 
   ionViewDidLoad() {
@@ -31,27 +34,27 @@ export class TeacherManagePage {
   }
 
   toTeacherReportPage(){
-    this.navCtrl.push(TeacherReportPage);
+    this.navCtrl.push(TeacherReportPage,{'current_user': this.current_user});
   }
 
   toTeacherApplyPage(){
-    this.navCtrl.push(TeacherApplyPage);
+    this.navCtrl.push(TeacherApplyPage,{'current_user': this.current_user});
   }
 
   toTeacherLeavePage(){
-    this.navCtrl.push(TeacherLeavePage);
+    this.navCtrl.push(TeacherLeavePage,{'current_user': this.current_user});
   }
 
   toTeacherRespondPage(){
-    this.navCtrl.push(TeacherRespondPage);
+    this.navCtrl.push(TeacherRespondPage,{'current_user': this.current_user});
   }
 
   toChangeInformationPage(){
-    this.navCtrl.push(ChangeInformationPage);
+    this.navCtrl.push(ChangeInformationPage,{'current_user': this.current_user});
   }
 
   toChangePasswordPage(){
-    this.navCtrl.push(ChangePasswordPage);
+    this.navCtrl.push(ChangePasswordPage,{'current_user': this.current_user});
   }
 
   exit(){
@@ -60,9 +63,7 @@ export class TeacherManagePage {
       buttons:[{
         text:'确定',
         handler:()=>{
-          this.storage.remove("currentUser");
           this.navCtrl.setRoot(LoginPage);
-          this.navCtrl.popToRoot();
         }
       },'取消']
     });

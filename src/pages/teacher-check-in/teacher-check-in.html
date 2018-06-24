@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>上课/下课</ion-title>
+    <ion-title>{{course_name}} 上课/下课</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -193,11 +193,10 @@
     <ion-row>
       <ion-item>
         <ion-label floating>查看信息</ion-label>
-        <ion-select onchange="window.location=this.value" [(ngModel)]="typeText" (ngModelChange)="switchType()"
-                  interface="popover" style="height:45px;">
-          <ion-option value="studentlist">学生名单</ion-option>
-          <ion-option value="record">旷课及请假学生名单</ion-option>
-          <ion-option value="historyrecord">考勤历史记录</ion-option>
+        <ion-select onchange="window.location=this.value" [(ngModel)]="courseInformation" (ngModelChange)="relatedInformation()" interface="popover" style="height:45px;">
+          <ion-option value="studentList">学生名单</ion-option>
+          <ion-option value="absentStudentList">旷课及请假学生名单</ion-option>
+          <ion-option value="historyRecord">考勤历史记录</ion-option>
         </ion-select>
       </ion-item>
     </ion-row>

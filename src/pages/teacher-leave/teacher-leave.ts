@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertProvider} from "../../providers/alert/alert";
 
 /**
  * Generated class for the TeacherLeavePage page.
@@ -15,11 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TeacherLeavePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alert: AlertProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeacherLeavePage');
+  }
+
+  submit() {
+    this.alert.alertMessages('功能开发中，敬请期待...');
   }
 
 }

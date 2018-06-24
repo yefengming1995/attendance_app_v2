@@ -1,6 +1,12 @@
 page-teacher-home {
   .col{
     background: lightsteelblue;
-    border: think solid black;
+    border: think solid white;
+  }
+
+  .button{
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+    white-space: normal !important;
   }
 }

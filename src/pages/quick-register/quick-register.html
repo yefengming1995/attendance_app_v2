@@ -1,0 +1,62 @@
+<!--
+  Generated template for the QuickRegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="light-blue">
+    <ion-title>快速注册</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-slides #registerSlides>
+    <ion-slide>
+      <ion-list>
+        <ion-item>
+          <ion-label>注册身份</ion-label>
+          <ion-select name="identity" [(ngModel)]='quickregister.identity'>
+            <ion-option value="teacher">教师</ion-option>
+            <ion-option value="student">学生</ion-option>
+          </ion-select>
+        </ion-item>
+        <div>
+          <p style="text-align: left">请输入手机号码：</p>
+          <ion-input name="phone" type="number" placeholder="请输入手机号码"
+                     required pattern="^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,3,5-9]))\\d{8}$"
+                     [(ngModel)]="quickregister.phone" #phone="ngModel">
+          </ion-input>
+          <ion-item *ngIf="phone.invalid && phone.touched">
+            <p [hidden]="!phone.errors?.required">请输入手机号码</p>
+            <p [hidden]="!phone.errors?.pattern">您输入的手机号格式不正确</p>
+          </ion-item>
+        </div>
+        <div>
+          <p style="text-align: left">请输入验证码：</p>
+          <div class="row">
+            <div class="col">
+              <ion-input name="code" type="number" placeholder="请输入验证码" required [(ngModel)]="quickregister.code" #code="ngModel"></ion-input>
+            </div>
+            <div class="col">
+              <button ion-button color="light-blue" block parmary (click)="send()" [disabled]="boolSend">{{textSend}}</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <button type="submit" ion-button block color="primary" parmary [disabled]="code.invalid" (click)="storageMes()">注册</button>
+        </div>
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+        <span>
+          注册成功!
+        </span>
+      <button type="submit" ion-button block color="primary" parmary  (click)="goHome()">回到首页</button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

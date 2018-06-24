@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>学生请假</ion-title>
+    <ion-title>学生请假条管理</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,13 +16,14 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <button ion-button clear style="height: 20px;font-size: medium">待审核</button>
+
+      <button ion-button clear style="height: 20px;font-size: medium" (click)="submit()">待审核</button>
     </ion-item>
     <ion-item>
-      <button ion-button clear style="height: 20px;font-size: medium">已同意</button>
+      <button ion-button clear style="height: 20px;font-size: medium" (click)="submit()">已同意</button>
     </ion-item>
     <ion-item>
-      <button ion-button clear style="height: 20px;font-size: medium">未通过</button>
+      <button ion-button clear style="height: 20px;font-size: medium" (click)="submit()">未通过</button>
     </ion-item>
   </ion-list>
 </ion-content>

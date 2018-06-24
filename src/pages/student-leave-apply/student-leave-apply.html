@@ -15,32 +15,29 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item>
-      <ion-label style="font-size: large">请假类型</ion-label>
-    </ion-item>
-    <label for="group1"><input type="radio" id="group1" class="group"  name="group" value="1" ng-model="choice" >
-      <span style="font-size: medium">事假</span>
-    </label><br>
-    <label for="group2"><input type="radio" id="group2" class="group" name="group" value="2" ng-model="choice" >
-      <span style="font-size: medium">病假</span>
-    </label><br>
-    <label for="group3"><input type="radio" id="group3" class="group" name="group" value="3" ng-model="choice" >
-      <span style="font-size: medium">其他</span>
-    </label>
+    <ion-row>
+      <ion-item>
+        <ion-label floating>选择课程</ion-label>
+        <ion-select onchange="window.location=this.value" [(ngModel)]="leave.course_name" interface="popover" style="height:45px;">
+          <ion-option *ngFor="let course of allCourses" value="{{course[0]}}">{{course[0]}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+
+    <ion-row>
+      <ion-item>
+        <ion-label floating>请假原因</ion-label>
+        <ion-select onchange="window.location=this.value" [(ngModel)]="leave.leave_reason" interface="popover" style="height:45px;">
+          <ion-option value="想写代码">想写代码</ion-option>
+          <ion-option value="卧病在床">卧病在床</ion-option>
+          <ion-option value="回家种田">回家种田</ion-option>
+          <ion-option value="外出相亲">外出相亲</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
   </ion-list>
-  <ion-list>
-    <ion-item>
-      <ion-label style="font-size: large">请假时间</ion-label>
-    </ion-item>
-    <ion-input placeholder="请填写请假时间" style="height: 30px;width: auto;font-size: medium"></ion-input>
-  </ion-list>
-  <ion-list>
-    <ion-item>
-      <ion-label style="font-size: large">请假事由</ion-label>
-    </ion-item>
-    <ion-input placeholder="请填写请假理由" style="height: 90px;width: auto;font-size: medium"></ion-input>
-  </ion-list>
+
   <div class="row">
-    <button type="submit" ion-button block color="primary">提交</button>
+    <button type="submit" ion-button block color="light-blue" round (click)="submit()">提交</button>
   </div>
 </ion-content>

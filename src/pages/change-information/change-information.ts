@@ -28,5 +28,7 @@ export class ChangeInformationPage {
     console.log('ionViewDidLoad ChangeInformationPage');
   }
 
-
+  submit() {
+    this.navCtrl.pop();
+  }
 }

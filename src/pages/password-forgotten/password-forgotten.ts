@@ -40,10 +40,10 @@ export class PasswordForgottenPage {
         useridRequest.append('username',this.forgotten.account);
         useridRequest.append('userid',this.forgotten.id);
 
-        let useridURL = 'http://119.29.225.79:8080/login/LoginJudge';
+        let useridURL = 'http://119.29.225.79:8080/login/ResetPassword';
         this.http.post(useridURL,useridRequest).map(res => res.json()).subscribe(data => {
           console.log(JSON.stringify(data));
-          if(data.data.length == '0') {
+          if(data.data[0].status == 'useridWrong') {
             this.alert.alertMessages('账号或工号/学号输入错误！')
           } else {
             this.alert.alertMessages('密码已重置为123456，请进入系统进行密码修改！');

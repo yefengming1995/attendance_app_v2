@@ -33,19 +33,19 @@ export class StudentManagePage {
   }
 
   toStudentLeaveApplyPage(){
-    this.navCtrl.push(StudentLeaveApplyPage);
+    this.navCtrl.push(StudentLeaveApplyPage,{'current_user': this.current_user});
   }
 
   toStudentLeavePage(){
-    this.navCtrl.push(StudentLeavePage);
+    this.navCtrl.push(StudentLeavePage,{'current_user': this.current_user});
   }
 
   toStudentRespondPage(){
-    this.navCtrl.push(StudentRespondPage);
+    this.navCtrl.push(StudentRespondPage,{'current_user': this.current_user});
   }
 
   toChangeInformationPage(){
-    this.navCtrl.push(ChangeInformationPage);
+    this.navCtrl.push(ChangeInformationPage,{'current_user': this.current_user});
   }
 
   toChangePasswordPage(){
@@ -58,9 +58,7 @@ export class StudentManagePage {
       buttons:[{
         text:'确定',
         handler:()=>{
-          this.storage.remove("currentUser");
           this.navCtrl.setRoot(LoginPage);
-          this.navCtrl.popToRoot();
         }
       },'取消']
     });
